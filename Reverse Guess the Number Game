@@ -1,4 +1,4 @@
-
+<?php session_start() ?>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -12,51 +12,45 @@ body { background: pink; color: green; }
 <body>
  
 <?php
-
-
-
-   if (isset($_POST["start_game"])){
  
+ if(isset($_POST['start_game']) || isset($_POST['myGuess'])){
+if (isset($_POST["counter"])){
+$counter = $_POST["counter"];
+ } else {
+$counter = 0;
+ } // end if
+ $counter++;
  
- if (isset($_POST["counter"])){
-    $counter = $_POST["counter"];
-  } else {
-    $counter = 0;
-  } // end if
-  $counter++;
- 
-  //store new data in counter
-  $_SESSION["counter"] = $counter;
+ //store new data in counter
+ $_SESSION["counter"] = $counter;
  
 $highest = isset($_POST['high']) ? $_POST['high'] : 100;
 $lowest = isset($_POST['low']) ? $_POST['low'] : 1;
 $myGuess = isset($_POST['myGuess']) ? $_POST['myGuess'] : 0;
  
- if(isset($_POST['choice'])){
-    if($_POST['choice']=="correct")
-    print "<br>I got it!
-     it took me $counter tries. <br>";
-    else if($_POST['choice']=="high")
+if(isset($_POST['choice'])){
+if($_POST['choice']=="correct")
+print "<br>I got it!
+it took me $counter tries. <br>";
+else if($_POST['choice']=="high")
 $highest=$myGuess-1;
-    else if($_POST['choice']=="low")
+else if($_POST['choice']=="low")
 $lowest=$myGuess+1;
-   }
-
-  $myGuess=rand($lowest,$highest);
   }
-  
-//This is used for debugging - keeping track of what each value is when the submit button is pressed
-
-//if(isset($_POST['choice'])){
-//print_r($_POST);
-//} 
-
+ $myGuess=rand($lowest,$highest);
  
-  
+//This is used for debugging - keeping track of what each value is when the submit button is pressed
+// if(isset($_POST['choice'])){
+//print_r($_POST);
+//}  
+$form = "showOptions";
+ }else{
+$form = "showStart";
+ }
+ 
+ 
+if($form == "showOptions"){
 ?>
-
-
-
 <form method="post" action="" name="choice">
 <input type="radio" name="choice" value="correct"><b>Correct!</b><br>
 <input type="radio" name="choice" value="high"><b>Too High</b><br>
@@ -68,18 +62,18 @@ $lowest=$myGuess+1;
 <input type="hidden" id="counter" name="counter" value="<?php echo $counter ?>"/>
  
 <input type="Submit" value="Submit" align="MIDDLE">
-<p>Guess: <?php print $myGuess; ?> </p>
-
-<?php echo "<br> <a href='http://localhost/Assignments php class/As6.php'>Reset Game</a>" ?>;
-
 </form>
+<p>Guess: <?php print $myGuess;?>
+<?php echo "<br> <a href='Assignment6.php'>Reset Game</a>" ?>;
+<?php
+} else{
+?>
 <p> You,The user, Think of a number, and I, the computer will try and guess it </p>
-<form method = "post" action="" name= "start_game">
-<input type ="Submit" name = "start_game" value = "Start Game" align ="MIDDLE">
-
+<form method="post" action="" name="choice">
+<input type="submit" name="start_game" id="start_game" value="Start Game"/>
 </form>
-
-
-
+<?php
+}
+?>
 </body>
 </html>

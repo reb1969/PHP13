@@ -1,4 +1,3 @@
-
 <?php session_start() ?>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -41,11 +40,12 @@ $lowest=$myGuess+1;
   $myGuess=rand($lowest,$highest);
   
 //This is used for debugging - keeping track of what each value is when the submit button is pressed
-  if(isset($_POST['choice'])){
-print_r($_POST);
-}  
+  //if(isset($_POST['choice'])){
+//print_r($_POST);
+//}  
   
 ?>
+<p> You,The user, Think of a number, and I, the computer will try and guess it </p>
 <form method="post" action="" name="choice">
 <input type="radio" name="choice" value="correct"><b>Correct!</b><br>
 <input type="radio" name="choice" value="high"><b>Too High</b><br>
@@ -57,8 +57,9 @@ print_r($_POST);
 <input type="hidden" id="counter" name="counter" value="<?php echo $counter ?>"/>
  
 <input type="Submit" value="Submit" align="MIDDLE">
+<?php echo "<br> <a href='http://localhost/Assignments%20php%20class/Assignment6.php'>Reset Game</a>" ?>;
 </form>
-<p> You,The user, Think of a number, and I, the computer will try and guess it </p>
+
  
 <p>Guess: <?php print $myGuess;?>
 </body>

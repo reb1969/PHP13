@@ -12,6 +12,9 @@ body { background: pink; color: green; }
 <body>
  
 <?php
+
+
+
    if (isset($_POST["start_game"])){
  
  
@@ -41,17 +44,19 @@ $lowest=$myGuess+1;
 
   $myGuess=rand($lowest,$highest);
   }
-  else {
-   echo "<br> <a href='http://localhost/Assignments php class/As6.php'>Reset Game</a>" ;
-  }
+  
 //This is used for debugging - keeping track of what each value is when the submit button is pressed
 
 //if(isset($_POST['choice'])){
 //print_r($_POST);
-//}  
+//} 
+
+ 
   
 ?>
-<p> You,The user, Think of a number, and I, the computer will try and guess it </p>
+
+
+
 <form method="post" action="" name="choice">
 <input type="radio" name="choice" value="correct"><b>Correct!</b><br>
 <input type="radio" name="choice" value="high"><b>Too High</b><br>
@@ -63,18 +68,18 @@ $lowest=$myGuess+1;
 <input type="hidden" id="counter" name="counter" value="<?php echo $counter ?>"/>
  
 <input type="Submit" value="Submit" align="MIDDLE">
+<p>Guess: <?php print $myGuess; ?> </p>
 
 <?php echo "<br> <a href='http://localhost/Assignments php class/As6.php'>Reset Game</a>" ?>;
 
 </form>
-
+<p> You,The user, Think of a number, and I, the computer will try and guess it </p>
 <form method = "post" action="" name= "start_game">
 <input type ="Submit" name = "start_game" value = "Start Game" align ="MIDDLE">
 
 </form>
 
- 
-<p>Guess: <?php print $myGuess; ?>
+
 
 </body>
 </html>

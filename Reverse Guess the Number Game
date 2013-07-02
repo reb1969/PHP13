@@ -6,7 +6,16 @@
 <head>
 <title>Computer can you guess my number</title>
 <style type = "text/css">
-body { background: pink; color: green; }
+
+#footer {font-size:xx-small;
+         text-align:center;
+  clear:right;
+         padding-bottom:20px;
+}
+body { 
+background-image:url("nightgame.jpg");
+ color: white;text-align:center  }
+p {  color: yellow; text-align:center;}
 </style>
 </head>
 <body>
@@ -51,6 +60,7 @@ $form = "showStart";
  
 if($form == "showOptions"){
 ?>
+<h2>
 <form method="post" action="" name="choice">
 <input type="radio" name="choice" value="correct"><b>Correct!</b><br>
 <input type="radio" name="choice" value="high"><b>Too High</b><br>
@@ -62,18 +72,34 @@ if($form == "showOptions"){
 <input type="hidden" id="counter" name="counter" value="<?php echo $counter ?>"/>
  
 <input type="Submit" value="Submit" align="MIDDLE">
-</form>
-<p>Guess: <?php print $myGuess;?>
-<?php echo "<br> <a href='Assignment6.php'>Reset Game</a>" ?>;
+</form> </h2>
+<h2><p> 
+IF THE COMPUTER'S GUESS IS TO HIGH, CLICK 'TO HIGH' <BR />
+IF THE COMPUTER'S GUESS IS TO LOW, CLICK, 'TO LOW' <BR />
+IF THE COMPUTER IS CORRECT, CLICK 'CORRECT'<BR />
+TO RESET TRIES, CLICK 'RESET<BR />
+<br /></p> </h2>
+
+<h1>
+COMPUTER'S Guess: <?php print $myGuess;?></h1>
+<h2>
+<?php echo "<br> <a  href='Assignment6.php'>Reset Game</a>" ?></h2>
 <?php
 } else{
 ?>
-<p> You,The user, Think of a number, and I, the computer will try and guess it </p>
+ Think of a number, and I,  will try and guess it <BR />
+When you have thought of the number <br />
+click the white button to begin <BR />
+Good luck!!!!!!!
+<BR />
 <form method="post" action="" name="choice">
-<input type="submit" name="start_game" id="start_game" value="Start Game"/>
+<input name="start_game" id="start_game" value="Start Game"
+type="submit" src="game.png" name="image" width="100" height="150"><br>
 </form>
+
 <?php
 }
 ?>
+ <p id="footer">Copyright &copy; 2013 DeAnna Riddlespur</p>
 </body>
 </html>

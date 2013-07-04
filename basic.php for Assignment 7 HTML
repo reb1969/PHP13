@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Customer Information</title>
+ <style type = "text/css">
+
+#footer {font-size: small;
+         text-align:center;
+  clear:right;
+         padding-bottom:20px;
+}
+body { 
+background-image:url("infor.jpg");
+ color: white;text-align:center  }
+p {  color: yellow; text-align:center;}
+</style>
+</head>
+<body>
+<h1>Customer Information</h1>
+<?php
+
+$cityName = array("001", "002", "003", "004");
+$cityNamed = array("Customer Name", "Customer Address", "Customer City", "Customer State");
+
+$distance = array(
+  array("DeAnna", "102 woodlands", "Atlanta", "Georgia"),
+  array("Joshua", "420 third ave","Columbus", "Ohio"),
+  array("Eden", "0101 fifth street", "Atlanta","Georgia"),
+  array("Aubrey", "Nanies Heart", "Always","Forever")
+);
+
+$cityA = filter_input(INPUT_POST, "cityA");
+$cityB = filter_input(INPUT_POST, "cityB");
+
+$fromCity = $cityName[$cityA];
+$toCity = $cityNamed[$cityB];
+
+$result = $distance[$cityA][$cityB];
+
+
+print "<h2> Your Information is as follows: <br />
+  		 Customer number: $fromCity <br />
+       	$toCity : $result</h2> \n";
+
+?>
+ <p id="footer">Copyright &copy; 2013 DeAnna Riddlespur</p>
+
+</body>
+</html>
+    

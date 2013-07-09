@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Customer Information</title>
+ <style type = "text/css">
+
+#footer {font-size: small;
+         text-align:center;
+    		clear:right;
+         padding-bottom:20px;
+}
+body { background-image:url("infor.jpg");
+ 		color: white;text-align:center  }
+p { color: yellow; text-align:center;}
+.centered { text-align: center; }
+.centered-table {
+   margin-left: auto;
+   margin-right: auto;
+}
+</style>
+</head>
+<body>
+<div class="centered">
+<h1>Customer Information</h1>
+
+
+
+<form action = "php.php"
+      method = "post">
+ <table class="centered-table" border="1">    
+
+<tr>
+  		<th>Customer Number</th>
+  		<th>Customer Information</th>
+</tr>
+
+
+
+<tr>
+  <td>
+    <select name = "custNo">
+      <option value = "001">001</option>
+      <option value = "002">002</option>
+      <option value = "003">003</option>
+      <option value = "004">004</option>
+     </select>
+   </td>
+
+  <td>
+    <select name = "custInfo">
+      <option value = "Name">Name</option>
+      <option value = "Address">Address </option>
+      <option value = "City">City</option>
+      <option value = "State">State</option>
+     </select>
+  </td>
+</tr>
+
+<tr>
+  <td colspan = "3">
+    <input type = "submit"
+           value = "Get Information" />
+  </td>
+</tr> 
+</table> 
+</form>
+</div>
+
+ <p id="footer">Copyright &copy; 2013 DeAnna Riddlespur</p>
+
+</body>
+</html>

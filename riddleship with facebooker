@@ -356,19 +356,7 @@ $encodedFleet = SerializeFleet($fleet);
 		</script>
 	</head>
 	<body>
-	  <p id="header"> HOW IT WORKS<br>
- 
-  Riddleship<br> is played on a 10X10 grid with rows lettered A through J and columns numbered 1 through 10.  The object <br>
-  is to sink all of the enemy ships on the board by calling out grid locations; if an enemy ship occupies that location,<br>
-  the ship sustains a hit; if enough hits are registered on the ship, the ship sinks.  There are five ships of varying sizes<br>
-  in the enemy fleet.  Normally this is a two player game but the computer does not play, so to make it challenging the<br>
-  human player is allowed to miss only 30 times before the game ends.  If the user can sink all five ships before missing<br>
-  30 times, he/she is the winner. The game board represented is an array of 100 elements. <br>
-   The computer places the ships on the board randomly so that<br>
-  no ships are colliding or hanging off the board.  Diagonal placement is not allowed.  When the ships are placed, they<br>
-  are placed with a code letter representing that ship in each of the spaces.  The ships are first placed with lower case<br>
-  letters.  When a hit is registered, the lower case letter is replaced with an upper case letter.  The number of upper<br>
-  case letters for each ship is counted and if that count equals the "size" of the ship, that ship is sunk.</p>
+	
 
 	<div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -459,6 +447,19 @@ $encodedFleet = SerializeFleet($fleet);
 				<textarea readonly="readonly" style="width: 600px;display:<?= ($debug ? "inline-block" : "none") ?>;" rows="14" id="debugScript" name="debugScript"><?= $debug ? $gameplayScript : "" ?></textarea>
 
 		</form>
+  <p id="header"> HOW IT WORKS<br>
+ 
+  Riddleship<br> is played on a 10X10 grid with rows lettered A through J and columns numbered 1 through 10.  The object <br>
+  is to sink all of the enemy ships on the board by calling out grid locations; if an enemy ship occupies that location,<br>
+  the ship sustains a hit; if enough hits are registered on the ship, the ship sinks.  There are five ships of varying sizes<br>
+  in the enemy fleet.  Normally this is a two player game but the computer does not play, so to make it challenging the<br>
+  human player is allowed to miss only 30 times before the game ends.  If the user can sink all five ships before missing<br>
+  30 times, he/she is the winner. The game board represented is an array of 100 elements. <br>
+   The computer places the ships on the board randomly so that<br>
+  no ships are colliding or hanging off the board.  Diagonal placement is not allowed.  When the ships are placed, they<br>
+  are placed with a code letter representing that ship in each of the spaces.  The ships are first placed with lower case<br>
+  letters.  When a hit is registered, the lower case letter is replaced with an upper case letter.  The number of upper<br>
+  case letters for each ship is counted and if that count equals the "size" of the ship, that ship is sunk.</p>		
 		 <p id="footer">Copyright &copy; 2013  Riddlespur & Lau & Corll</p>
 		
 

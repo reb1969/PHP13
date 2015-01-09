@@ -423,7 +423,7 @@ $encodedFleet = SerializeFleet($fleet);
 				<textarea readonly="readonly" style="width: 600px;display:<?= ($debug ? "inline-block" : "none") ?>;" rows="14" id="debugScript" name="debugScript"><?= $debug ? $gameplayScript : "" ?></textarea>
 
 		</form>
-		 <p id="footer">Copyright &copy; 2013 DeAnna Riddlespur & Gene Lau & Matthew Semple</p>
+		 <p id="footer">Copyright &copy; 2013 DeAnna Riddlespu</p>
 
 	</body>
 </html>
